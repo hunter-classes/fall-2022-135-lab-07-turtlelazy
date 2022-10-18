@@ -4,3 +4,4 @@ main
 *.out
 test.txt
 .vscode
+.DS_Store
