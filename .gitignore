@@ -5,3 +5,4 @@ main
 test.txt
 .vscode
 .DS_Store
+out.cpp
