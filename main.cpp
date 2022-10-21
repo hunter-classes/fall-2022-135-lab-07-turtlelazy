@@ -13,6 +13,9 @@ int main(){
         str = ss.str();
     }
     //std::cout << str;
+    std::cout << "Count Char for: The quick nr{bwori}n f{ox{ j{u{mp{s ov{r{ the \n";
+    std::cout << countChar("The quick nr{bwori}n f{ox{ j{u{mp{s ov{r{ the ",'{') << "\n\n";
+
     std::cout << "Remove Leading Space:\n";
     std::cout << removeLeadingSpaces(str) << "\n\n";
 
