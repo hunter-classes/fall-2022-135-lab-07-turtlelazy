@@ -36,6 +36,7 @@ int countChar(std::string line, char c){
     return count;
 }
 
+//convulted if statement logic?
 std::string pretiffy(std::string line)
 {
     std::string return_string = "";
@@ -43,16 +44,20 @@ std::string pretiffy(std::string line)
     int leading_tabs = 0;
     for (int i = 0; i < line.length(); i++)
     {
-
+        //if the line started with a open bracket, adds to tab counter
         if (line[i] == '{')
         {
             leading_tabs += 1;
         }
 
+        //does not remove spaces if it is a character
         if (!isspace(line[i]))
         {
             remove_spaces = false;
         }
+
+        //if it is a character or is a newline character or are removing spaces ->
+        //decrement tab counter if it is a closing bracket; add to return_string otherwise
         if (!isspace(line[i]) || line[i] == '\n' || !remove_spaces)
         {
             if (line[i] == '}')
@@ -64,7 +69,7 @@ std::string pretiffy(std::string line)
                 return_string += line[i];
             }
         }
-
+        //if the character is a newline, start removing spaces and add the tabs that are desired
         if (line[i] == '\n')
         {
             remove_spaces = true;
