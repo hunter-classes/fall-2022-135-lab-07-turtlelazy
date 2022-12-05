@@ -3,13 +3,17 @@
 #include <string>
 #include <cctype>
 
-std::string removeLeadingSpaces(std::string line);
-int countChar(std::string line, char c);
-std::string add_tabs(int i);
-std::string pretiffy(std::string line);
+std::string add_tabs(int i){
+    std::string return_string = "";
 
-    std::string removeLeadingSpaces(std::string line)
-{
+    for(int x = 0; x < i; x++){
+        return_string += "\t";
+    }
+
+    return return_string;
+}
+
+std::string removeLeadingSpaces(std::string line){
     std::string return_string = "";
     bool remove_spaces = true;
     for(int i = 0; i < line.length(); i++){
@@ -37,8 +41,7 @@ int countChar(std::string line, char c){
 }
 
 //convulted if statement logic?
-std::string pretiffy(std::string line)
-{
+std::string pretiffy(std::string line){
     std::string return_string = "";
     bool remove_spaces = true;
     int leading_tabs = 0;
@@ -76,15 +79,5 @@ std::string pretiffy(std::string line)
             return_string += add_tabs(leading_tabs);
         }
     }
-    return return_string;
-}
-
-std::string add_tabs(int i){
-    std::string return_string = "";
-
-    for(int x = 0; x < i; x++){
-        return_string += "\t";
-    }
-
     return return_string;
 }
